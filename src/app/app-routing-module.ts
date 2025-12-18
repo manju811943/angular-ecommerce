@@ -1,0 +1,30 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductList } from './components/product-list/product-list';
+import { Product } from './common/product';
+import { Search } from './components/search/search';
+import { ProductDetails } from './components/product-details/product-details';
+import { CartDetails } from './components/cart-details/cart-details';
+import { Checkout } from './components/checkout/checkout';
+import { Login } from './components/login/login';
+
+const routes: Routes = [
+  {path:'login', component:Login},
+  {path:'checkout', component:Checkout},
+  {path:'cart-details', component:CartDetails},
+  {path:'products/:id', component: ProductDetails},
+  {path:'search/:keyword', component: ProductList},
+  {path:'category/:id', component: ProductList },
+  {path:'products', component:ProductList},
+  {path:'category', component:ProductList},
+  {path:'', redirectTo: '/products', pathMatch:'full'},
+  {path:'**', redirectTo:'/products', pathMatch:'full'}
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
