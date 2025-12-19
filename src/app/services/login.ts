@@ -11,7 +11,7 @@ export class LoginService {
  
    constructor(private http : HttpClient) { }
 
-   private baseUrl = "http://localhost:8080" 
+   private baseUrl = "http://15.207.105.107:9090" 
 
   login(login: Login) {
     const loginUrl = `${this.baseUrl}/login`;

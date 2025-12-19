@@ -10,7 +10,7 @@ import { ProductCategory } from '../common/product-category';
 export class ProductService {
   
   constructor(private http : HttpClient) { }
-  private baseUrl = "http://localhost:8080" 
+  private baseUrl = "http://15.207.105.107:9090" 
 
   getProductListPaginate(thePage:number, 
                          thePageSize:number,

@@ -9,7 +9,7 @@ import { StateList } from '../common/State-list';
 })
 export class CountryState {
 
-  private baseUrl = "http://localhost:8080" 
+  private baseUrl = "http://15.207.105.107:9090" 
   constructor(private http : HttpClient) { }
 
  
