@@ -26,7 +26,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy Angular build output to nginx
-COPY --from=build /app/dist/angular-ecommerce /usr/share/nginx/html
+COPY --from=build /app/dist/angular-ecommerce/browser /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
