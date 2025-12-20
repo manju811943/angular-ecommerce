@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Product } from '../common/product';
 import { ProductCategory } from '../common/product-category';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ import { ProductCategory } from '../common/product-category';
 export class ProductService {
   
   constructor(private http : HttpClient) { }
-  private baseUrl = "http://15.207.105.107:9090" 
+  // private baseUrl = "http://15.207.105.107:9090" 
+  private readonly baseUrl = environment.apiBaseUrl;
 
   getProductListPaginate(thePage:number, 
                          thePageSize:number,

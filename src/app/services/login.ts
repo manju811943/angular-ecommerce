@@ -2,16 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { Login } from '../common/Login';
+import { environment } from '../../environments/environment'
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-
- 
    constructor(private http : HttpClient) { }
-
-   private baseUrl = "http://15.207.105.107:9090" 
+   private readonly baseUrl = environment.apiBaseUrl;
 
   login(login: Login) {
     const loginUrl = `${this.baseUrl}/login`;

@@ -3,13 +3,14 @@ import { CountryList } from '../common/country-list';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
 import { StateList } from '../common/State-list';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryState {
 
-  private baseUrl = "http://15.207.105.107:9090" 
+ private readonly baseUrl = environment.apiBaseUrl;
   constructor(private http : HttpClient) { }
 
  
